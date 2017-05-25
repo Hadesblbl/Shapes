@@ -40,7 +40,7 @@ public class SCollection extends Shape {
 	}
 	
 	@Override
-	public Rectangle getBounds() {
+	public Rectangle getBounds() throws Exception{
 		Rectangle bounds = shapes.get(0).getBounds();
 		
 		for(Shape s:shapes){
