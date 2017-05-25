@@ -40,14 +40,13 @@ public class SCollection extends Shape {
 	}
 	
 	@Override
-	public Rectangle getBounds() throws Exception {
-		Rectangle r = new Rectangle();
+	public Rectangle getBounds() {
+		Rectangle bounds = shapes.get(0).getBounds();
 		
-		for (Iterator<Shape> it = this.iterator(); it.hasNext();) {
-			r.setLocation(it.next().getLoc());
-			r = r.union(it.next().getBounds());
+		for(Shape s:shapes){
+			bounds=bounds.union(s.getBounds());
 		}
-		return r;
+		return bounds;
 	}
 
 	@Override
